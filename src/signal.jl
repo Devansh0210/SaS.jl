@@ -86,14 +86,16 @@ function convol(A::Signal, B::Signal)
       for i in k1:k2
             for j in -B.n2:-B.n1
                   C[i] += B[-j]*A[j+i]
-                  println((j,j+i))
+                  # println((j,j+i))
             end
-            println("---")
+            # println("---")
       end
       return C
 end
 
 ⋆(A::Signal, B::Signal) = convol(A::Signal, B::Signal)
+
+δ = Signal(0,0,[1])
 
 # begin
 #       include("signal.jl")
