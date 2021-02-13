@@ -14,8 +14,8 @@ end
 
 Base.IndexStyle(::Type{<:Signal}) = IndexLinear()
 
-Base.firstindex(A::Signal) = A.vals[1]
-Base.lastindex(A::Signal) = A.vals[end]
+Base.firstindex(A::Signal) = A.n1
+Base.lastindex(A::Signal) = A.n2
 
 Base.size(A::Signal) = (A.n2 - A.n1 + 1,)
 Base.length(A::Signal) = length(A.vals)
